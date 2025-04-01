@@ -6,7 +6,7 @@
 /*   By: hali-mah <hali-mah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 10:15:38 by hali-mah          #+#    #+#             */
-/*   Updated: 2025/04/01 11:52:51 by hali-mah         ###   ########.fr       */
+/*   Updated: 2025/04/01 12:17:45 by hali-mah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	Phonebook::addContact(const Contact& contact)
 		std::cout << "Error: All contact fields must be filled." << std::endl;
 		return ;
     }
-	if(_contactCount = 8)
+	if(_contactCount == 8)
 	{
 		_contacts[_oldestIndex] = contact;
 		_oldestIndex = (_oldestIndex + 1) % 8;

@@ -6,7 +6,7 @@
 /*   By: hali-mah <hali-mah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 10:16:16 by hali-mah          #+#    #+#             */
-/*   Updated: 2025/04/01 12:13:49 by hali-mah         ###   ########.fr       */
+/*   Updated: 2025/04/01 12:18:26 by hali-mah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ Contact createContact()
 	std::getline(std::cin, input);
 	newContact.setPhoneNumber(input);
 
-	std::cout << "Enter the darkest secret: "
+	std::cout << "Enter the darkest secret: ";
 	std::getline(std::cin, input);
 	newContact.setDarkestSecret(input);
 
@@ -54,8 +54,7 @@ int main()
 {
 	Phonebook   phonebook;
 	std::string	command;
-	
-	std::cout << "My phonebook\n";
+
 	while (true)
 	{
 		displayPhonebook();
