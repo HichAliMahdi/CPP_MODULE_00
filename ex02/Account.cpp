@@ -6,7 +6,7 @@
 /*   By: hali-mah <hali-mah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 12:47:25 by hali-mah          #+#    #+#             */
-/*   Updated: 2025/04/01 13:44:40 by hali-mah         ###   ########.fr       */
+/*   Updated: 2025/04/01 13:47:46 by hali-mah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,14 @@ Account::Account(int initial_deposit)
 	std::cout << " index:" << _accountIndex
 			  << ";amount:"<< _amount
 			  << ";created" << std::endl;		
+}
+void Account::displayStatus() const
+{
+    _displayTimestamp();
+    std::cout << " index:" << _accountIndex
+              << ";amount:" << _amount
+              << ";deposits:" << _nbDeposits
+              << ";withdrawals:" << _nbWithdrawals << std::endl;
 }
 
 Account::~Account()
