@@ -6,7 +6,7 @@
 /*   By: hali-mah <hali-mah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 09:43:15 by hali-mah          #+#    #+#             */
-/*   Updated: 2025/04/01 11:03:27 by hali-mah         ###   ########.fr       */
+/*   Updated: 2025/04/01 11:24:13 by hali-mah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class Contact
 		std::string	getNickName() const;
 		std::string	getPhoneNumber() const;
 		std::string	getDarkestSecret() const;
+		bool 		isEmpty() const;
 	private:
 		std::string _firstname;
 		std::string _lastname;

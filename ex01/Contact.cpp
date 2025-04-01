@@ -6,7 +6,7 @@
 /*   By: hali-mah <hali-mah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 10:15:00 by hali-mah          #+#    #+#             */
-/*   Updated: 2025/04/01 11:03:14 by hali-mah         ###   ########.fr       */
+/*   Updated: 2025/04/01 11:27:39 by hali-mah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,9 @@ std::string Contact::getPhoneNumber() const
 std::string Contact::getDarkestSecret() const
 {
     return _darkestsecret;
+}
+
+bool Contact::isEmpty() const
+{
+    return (_firstname.empty() || _lastname.empty() || _nickname.empty() || _phonenumber.empty() || _darkestsecret.empty());
 }
