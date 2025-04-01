@@ -6,7 +6,7 @@
 /*   By: hali-mah <hali-mah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 12:47:25 by hali-mah          #+#    #+#             */
-/*   Updated: 2025/04/01 13:47:46 by hali-mah         ###   ########.fr       */
+/*   Updated: 2025/04/01 13:56:03 by hali-mah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ Account::~Account()
 	_displayTimestamp();
 	std::cout << " index:" << _accountIndex
 			  << ";amount:" << _amount
-			  << ";closed:" << std::endl;
+			  << ";closed" << std::endl;
 }
 
 int Account::getNbAccounts( void )
@@ -82,8 +82,8 @@ void	Account::makeDeposit( int deposit )
 {
 	_displayTimestamp();
 	std::cout << " index:" << _accountIndex
-			  << ";p_amount" << _amount
-			  << ";deposit" << deposit;
+			  << ";p_amount:" << _amount
+			  << ";deposit:" << deposit;
 	_amount += deposit;
 	_nbDeposits++;
 	_totalNbDeposits++;
@@ -102,9 +102,9 @@ bool	Account::makeWithdrawal( int withdrawal )
 		std::cout << "refused" << std::endl;
 		return (false);
 	}
-	_amount = withdrawal;
+	_amount -= withdrawal;
 	_nbWithdrawals++;
-	_totalAmount = withdrawal;
+	_totalAmount -= withdrawal;
 	_totalNbWithdrawals++;
 	std::cout << withdrawal
 			  << ";amount:" << _amount
@@ -112,16 +112,15 @@ bool	Account::makeWithdrawal( int withdrawal )
 	return (true);
 }
 
-void	Account::_displayTimestamp( void )
+void Account::_displayTimestamp( void )
 {
-	time_t now = std::time(NULL);
-	struct tm timenow = *std::localtime(&now);
-
-	std::cout << "[" << timenow.tm_year + 1900 <<
-	std::setfill('0') << std::setw(2) << timenow.tm_mon + 1 <<
-	std::setfill('0') << std::setw(2) << timenow.tm_mday << "_" <<
-	std::setfill('0') << std::setw(2) << timenow.tm_hour <<
-	std::setfill('0') << std::setw(2) << timenow.tm_min <<
-	std::setfill('0') << std::setw(2) << timenow.tm_sec <<
-	"] ";
+    std::time_t t = std::time(nullptr);
+    std::tm* now = std::localtime(&t);
+    std::cout << "[" << (now->tm_year + 1900)
+              << std::setw(2) << std::setfill('0') << (now->tm_mon + 1)
+              << std::setw(2) << std::setfill('0') << now->tm_mday << "_"
+              << std::setw(2) << std::setfill('0') << now->tm_hour
+              << std::setw(2) << std::setfill('0') << now->tm_min
+              << std::setw(2) << std::setfill('0') << now->tm_sec
+              << "] ";
 }
