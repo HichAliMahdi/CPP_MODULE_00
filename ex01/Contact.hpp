@@ -6,7 +6,7 @@
 /*   By: hali-mah <hali-mah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 09:43:15 by hali-mah          #+#    #+#             */
-/*   Updated: 2025/04/01 10:12:32 by hali-mah         ###   ########.fr       */
+/*   Updated: 2025/04/01 10:44:44 by hali-mah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,18 @@ class Contact
 {
     public:
         Contact();
-        std::string First_name;
-        std::string Last_name;
-        std::string NickName;
-        std::string PhoneNumber; 
-    
-}
+        void    setFirstName(std::string firstName);
+        void    setLastName(std::string lastName);
+        void    setNickName(std::string nickName);
+        void    setPhoneNumber(std::string phoneNunber);
+        void    setDarkestSecret(std::string darkestSecret);
+        
+    private:
+        std::string _firstname;
+        std::string _lastname;
+        std::string _nickname;
+        std::string _phonenumber;
+        std::string _darkestsecret;
+};
 
 #endif

@@ -6,7 +6,18 @@
 /*   By: hali-mah <hali-mah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 10:15:00 by hali-mah          #+#    #+#             */
-/*   Updated: 2025/04/01 10:15:19 by hali-mah         ###   ########.fr       */
+/*   Updated: 2025/04/01 10:47:26 by hali-mah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Contact.hpp"
+
+Contact::Contact()
+{
+    _firstname = "";
+    _lastname = "";
+    _nickname = "";
+    _phonenumber = "";
+    _darkestsecret = "";
+}
 
