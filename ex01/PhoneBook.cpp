@@ -6,7 +6,7 @@
 /*   By: hali-mah <hali-mah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 10:15:38 by hali-mah          #+#    #+#             */
-/*   Updated: 2025/04/01 11:41:36 by hali-mah         ###   ########.fr       */
+/*   Updated: 2025/04/01 11:45:14 by hali-mah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,21 @@ void Phonebook::displayContactList() const
 	std::cout << std::right << std::setw(10) << "Last Name" << "|";
 	std::cout << std::right << std::setw(10) << "Nickname" << std::endl;
 	std::cout << std::string(43, '-') << std::endl;
+	for (int i = 0; i < _contactCount; i++)
+	{
+		std::cout << std::right << std::setw(10) << i << "|";
+		std::cout << std::right << std::setw(10) << truncateField(_contacts[i].getFirstName()) << "|";
+		std::cout << std::right << std::setw(10) << truncateField(_contacts[i].getLastName()) << "|";
+		std::cout << std::right << std::setw(10) << truncateField(_contacts[i].getNickName()) << std::endl;
+	}
+}
+
+void Phonebook::displayContact(int index) const
+{
+	std::cout << "Contact details:" << std::endl;
+	std::cout << "First name: " << _contacts[index].getFirstName() << std::endl;
+	std::cout << "Last name: " << _contacts[index].getLastName() << std::endl;
+	std::cout << "Nickname: " << _contacts[index].getNickName() << std::endl;
+	std::cout << "Phone number: " << _contacts[index].getPhoneNumber() << std::endl;
+	std::cout << "Darkest secret: " << _contacts[index].getDarkestSecret() << std::endl;
 }
