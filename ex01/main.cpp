@@ -6,7 +6,7 @@
 /*   By: hali-mah <hali-mah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 10:16:16 by hali-mah          #+#    #+#             */
-/*   Updated: 2025/04/01 12:12:08 by hali-mah         ###   ########.fr       */
+/*   Updated: 2025/04/01 12:13:49 by hali-mah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,23 +56,26 @@ int main()
 	std::string	command;
 	
 	std::cout << "My phonebook\n";
-	displayPhonebook();
-	std::getline(std::cin, command);
-	if (command == "ADD")
+	while (true)
 	{
-		Contact contact = createContact();
-		phonebook.addContact(contact);
+		displayPhonebook();
+		std::getline(std::cin, command);
+		if (command == "ADD")
+		{
+			Contact contact = createContact();
+			phonebook.addContact(contact);
+		}
+		else if (command == "SEARCH")
+		{
+			phonebook.searchContact();
+		}
+		else if (command == "EXIT")
+		{
+			std::cout << "Goodbye! All the contacts will be lost forever!\n";
+			break;
+		}
+		else
+			std::cout << "Unknown command, try again.\n";
 	}
-	else if (command == "SEARCH")
-	{
-		phonebook.searchContact();
-	}
-	else if (command == "EXIT")
-	{
-		std::cout << "Goodbye! All the contacts will be lost forever!\n";
-		break ;
-	}
-	else
-		std::cout << "Unknown command, try again.\n";
 	return (0);
 }
